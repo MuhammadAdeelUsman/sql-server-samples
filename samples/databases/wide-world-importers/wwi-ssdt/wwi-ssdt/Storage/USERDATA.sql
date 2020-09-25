@@ -1,3 +1,3 @@
-﻿ALTER DATABASE [$(DatabaseName)]
-    ADD FILEGROUP [USERDATA];
+﻿--ALTER DATABASE [$(DatabaseName)]
+    --ADD FILEGROUP [USERDATA];
 

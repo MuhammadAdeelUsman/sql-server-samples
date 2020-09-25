@@ -26,38 +26,39 @@
 GO
 CREATE CLUSTERED INDEX [CX_Purchasing_SupplierTransactions]
     ON [Purchasing].[SupplierTransactions]([TransactionDate] ASC)
-    ON [PS_TransactionDate] ([TransactionDate]);
+   -- ON [PS_TransactionDate] ([TransactionDate]);
+   ;
 
 
 GO
 CREATE NONCLUSTERED INDEX [FK_Purchasing_SupplierTransactions_SupplierID]
     ON [Purchasing].[SupplierTransactions]([SupplierID] ASC)
-    ON [PS_TransactionDate] ([TransactionDate]);
-
+    -- ON [PS_TransactionDate] ([TransactionDate]);
+    ;
 
 GO
 CREATE NONCLUSTERED INDEX [FK_Purchasing_SupplierTransactions_TransactionTypeID]
     ON [Purchasing].[SupplierTransactions]([TransactionTypeID] ASC)
-    ON [PS_TransactionDate] ([TransactionDate]);
-
+    -- ON [PS_TransactionDate] ([TransactionDate]);
+    ;
 
 GO
 CREATE NONCLUSTERED INDEX [FK_Purchasing_SupplierTransactions_PurchaseOrderID]
     ON [Purchasing].[SupplierTransactions]([PurchaseOrderID] ASC)
-    ON [PS_TransactionDate] ([TransactionDate]);
-
+   -- ON [PS_TransactionDate] ([TransactionDate]);
+   ;
 
 GO
 CREATE NONCLUSTERED INDEX [FK_Purchasing_SupplierTransactions_PaymentMethodID]
     ON [Purchasing].[SupplierTransactions]([PaymentMethodID] ASC)
-    ON [PS_TransactionDate] ([TransactionDate]);
-
+    --ON [PS_TransactionDate] ([TransactionDate]);
+    ;
 
 GO
 CREATE NONCLUSTERED INDEX [IX_Purchasing_SupplierTransactions_IsFinalized]
     ON [Purchasing].[SupplierTransactions]([IsFinalized] ASC)
-    ON [PS_TransactionDate] ([TransactionDate]);
-
+   -- ON [PS_TransactionDate] ([TransactionDate]);
+   ;
 
 GO
 EXECUTE sp_addextendedproperty @name = N'Description', @value = 'Auto-created to support a foreign key', @level0type = N'SCHEMA', @level0name = N'Purchasing', @level1type = N'TABLE', @level1name = N'SupplierTransactions', @level2type = N'INDEX', @level2name = N'FK_Purchasing_SupplierTransactions_SupplierID';

@@ -25,38 +25,42 @@
 GO
 CREATE CLUSTERED INDEX [CX_Sales_CustomerTransactions]
     ON [Sales].[CustomerTransactions]([TransactionDate] ASC)
-    ON [PS_TransactionDate] ([TransactionDate]);
+    --ON [PS_TransactionDate] ([TransactionDate])
+    ;
 
 
 GO
 CREATE NONCLUSTERED INDEX [FK_Sales_CustomerTransactions_CustomerID]
     ON [Sales].[CustomerTransactions]([CustomerID] ASC)
-    ON [PS_TransactionDate] ([TransactionDate]);
+   -- ON [PS_TransactionDate] ([TransactionDate])
+    ;
 
 
 GO
 CREATE NONCLUSTERED INDEX [FK_Sales_CustomerTransactions_TransactionTypeID]
     ON [Sales].[CustomerTransactions]([TransactionTypeID] ASC)
-    ON [PS_TransactionDate] ([TransactionDate]);
+    -- ON [PS_TransactionDate] ([TransactionDate])
+    ;
 
 
 GO
 CREATE NONCLUSTERED INDEX [FK_Sales_CustomerTransactions_InvoiceID]
     ON [Sales].[CustomerTransactions]([InvoiceID] ASC)
-    ON [PS_TransactionDate] ([TransactionDate]);
+    --ON [PS_TransactionDate] ([TransactionDate])
+    ;
 
 
 GO
 CREATE NONCLUSTERED INDEX [FK_Sales_CustomerTransactions_PaymentMethodID]
     ON [Sales].[CustomerTransactions]([PaymentMethodID] ASC)
-    ON [PS_TransactionDate] ([TransactionDate]);
-
+    --ON [PS_TransactionDate] ([TransactionDate]);
+    ;
 
 GO
 CREATE NONCLUSTERED INDEX [IX_Sales_CustomerTransactions_IsFinalized]
     ON [Sales].[CustomerTransactions]([IsFinalized] ASC)
-    ON [PS_TransactionDate] ([TransactionDate]);
-
+   -- ON [PS_TransactionDate] ([TransactionDate]);
+   ;
 
 GO
 EXECUTE sp_addextendedproperty @name = N'Description', @value = 'Auto-created to support a foreign key', @level0type = N'SCHEMA', @level0name = N'Sales', @level1type = N'TABLE', @level1name = N'CustomerTransactions', @level2type = N'INDEX', @level2name = N'FK_Sales_CustomerTransactions_CustomerID';
